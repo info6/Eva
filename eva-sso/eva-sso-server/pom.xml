@@ -9,7 +9,7 @@
 	</parent>
 	<modelVersion>4.0.0</modelVersion>
 
-	<artifactId>eva-sso-service</artifactId>
+	<artifactId>eva-sso-server</artifactId>
 
 
 </project>

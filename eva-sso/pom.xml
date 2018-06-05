@@ -15,7 +15,7 @@
 
 	<modules>
 		<module>eva-sso-client</module>
-		<module>eva-sso-service</module>
+		<module>eva-sso-server</module>
 		<module>eva-sso-rpc-api</module>
 		<module>eva-sso-rpc-service</module>
 		<module>eva-sso-common</module>
