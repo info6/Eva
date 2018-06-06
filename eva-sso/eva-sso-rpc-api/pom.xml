@@ -12,4 +12,17 @@
 	<artifactId>eva-sso-rpc-api</artifactId>
 
 
+	<dependencies>
+		<dependency>
+			<groupId>com.info6</groupId>
+			<artifactId>eva-sso-rpc-service</artifactId>
+			<version>1.0-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>com.alibaba.boot</groupId>
+			<artifactId>dubbo-spring-boot-starter</artifactId>
+			<version>0.1.0</version>
+		</dependency>
+	</dependencies>
+
 </project>

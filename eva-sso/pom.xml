@@ -13,6 +13,18 @@
 
 	<name>eva-sso</name>
 
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-dependencies</artifactId>
+				<version>2.0.2.RELEASE</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
 	<modules>
 		<module>eva-sso-client</module>
 		<module>eva-sso-server</module>
@@ -21,6 +33,7 @@
 		<module>eva-sso-common</module>
 		<module>eva-sso-dao</module>
 		<module>eva-sso-ui</module>
+		<module>eva-sso-demo</module>
 	</modules>
 
 </project>
