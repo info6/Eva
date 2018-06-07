@@ -12,11 +12,6 @@
 
 	<dependencies>
 		<dependency>
-			<groupId>com.info6</groupId>
-			<artifactId>eva-sso-rpc-api</artifactId>
-			<version>1.0-SNAPSHOT</version>
-		</dependency>
-		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
