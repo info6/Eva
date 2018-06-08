@@ -5,11 +5,12 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.domain.Specification;
-
 import java.io.Serializable;
 import java.util.List;
 
-public interface BaseService<T, ID extends Serializable> {
+public interface BaseService<T, ID extends Serializable, B extends BaseRepository<T, ID>> {
+
+	B getRepository();
 
 	T save(T t);
 

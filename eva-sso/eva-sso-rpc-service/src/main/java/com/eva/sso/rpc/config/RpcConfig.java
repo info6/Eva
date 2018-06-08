@@ -6,22 +6,24 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+@Configuration
 public class RpcConfig {
 
 	@Value("${zookeeper.address}")
-	private String address;
+	private String zkAddress;
 
 	@Bean
 	public ApplicationConfig applicationConfig() {
 		ApplicationConfig applicationConfig = new ApplicationConfig();
 		applicationConfig.setName("provider-test");
+		applicationConfig.setLogger("slf4j");
 		return applicationConfig;
 	}
 
 	@Bean
 	public RegistryConfig registryConfig() {
 		RegistryConfig registryConfig = new RegistryConfig();
-		registryConfig.setAddress(address);
+		registryConfig.setAddress(zkAddress);
 		registryConfig.setClient("curator");
 		return registryConfig;
 	}

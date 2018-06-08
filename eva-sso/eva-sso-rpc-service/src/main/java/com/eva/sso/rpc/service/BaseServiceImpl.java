@@ -10,68 +10,66 @@ import org.springframework.data.jpa.domain.Specification;
 import java.io.Serializable;
 import java.util.List;
 
-public class BaseServiceImpl<T, ID extends Serializable> implements BaseService<T, ID> {
-
-	private BaseRepository<T, ID> baseRepository;
-
+public abstract class BaseServiceImpl<T, ID extends Serializable, B extends BaseRepository<T, ID>> implements BaseService<T, ID, B> {
 
 	@Override
 	public T save(T t) {
-		return baseRepository.save(t);
+		return getRepository().save(t);
 	}
 
 	@Override
 	public T saveAndFlush(T t) {
-		return baseRepository.saveAndFlush(t);
+		return getRepository().saveAndFlush(t);
 	}
 
 	@Override
 	public T getOne(ID id) {
-		return baseRepository.getOne(id);
+		return getRepository().getOne(id);
 	}
 
 	@Override
 	public void deleteById(ID id) {
-		baseRepository.deleteById(id);
+		getRepository().deleteById(id);
 	}
 
 	@Override
 	public void delete(T t) {
-		baseRepository.delete(t);
+		getRepository().delete(t);
 	}
 
 	@Override
 	public boolean existsById(ID id) {
-		return baseRepository.existsById(id);
+		return getRepository().existsById(id);
 	}
 
 	@Override
 	public long count() {
-		return baseRepository.count();
+		return getRepository().count();
 	}
 
 	@Override
 	public List<T> findAll() {
-		return baseRepository.findAll();
+		return getRepository().findAll();
 	}
 
 	@Override
 	public List<T> findAll(Sort sort) {
-		return baseRepository.findAll(sort);
+		return getRepository().findAll(sort);
 	}
 
 	@Override
 	public List<T> findAll(Specification<T> specification) {
-		return null;
+		return getRepository().findAll(specification);
 	}
 
 	@Override
 	public Page<T> findAll(Pageable pageable) {
-		return baseRepository.findAll(pageable);
+		return getRepository().findAll(pageable);
 	}
 
 	@Override
 	public Page<T> findAll(Specification<T> specification, Pageable pageable) {
-		return null;
+		return getRepository().findAll(specification, pageable);
 	}
+
 }

@@ -9,7 +9,7 @@ spring:
       generate-ddl: false
 
   datasource:
-      url: jdbc:mysql://localhost/sso
+      url: jdbc:mysql://localhost/sso?useSSL=false
       username: root
       password:
       type: com.alibaba.druid.pool.DruidDataSource
