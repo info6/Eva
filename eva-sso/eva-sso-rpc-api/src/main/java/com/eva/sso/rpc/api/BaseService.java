@@ -1,5 +1,6 @@
 package com.eva.sso.rpc.api;
 
+import com.eva.sso.dao.repository.BaseRepository;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;

@@ -1,26 +1,19 @@
-package com.sso.rpc.service;
+package com.eva.sso.rpc.service;
 
 import com.eva.sso.dao.repository.BaseRepository;
 import com.eva.sso.rpc.api.BaseService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.domain.Specification;
-import org.springframework.stereotype.Service;
 
 import java.io.Serializable;
 import java.util.List;
 
-@Service
 public class BaseServiceImpl<T, ID extends Serializable> implements BaseService<T, ID> {
 
-	private final BaseRepository<T, ID> baseRepository;
+	private BaseRepository<T, ID> baseRepository;
 
-	@Autowired
-	public BaseServiceImpl(BaseRepository<T, ID> baseRepository) {
-		this.baseRepository = baseRepository;
-	}
 
 	@Override
 	public T save(T t) {
@@ -69,7 +62,7 @@ public class BaseServiceImpl<T, ID extends Serializable> implements BaseService<
 
 	@Override
 	public List<T> findAll(Specification<T> specification) {
-		return baseRepository.findAll(specification);
+		return null;
 	}
 
 	@Override
@@ -79,6 +72,6 @@ public class BaseServiceImpl<T, ID extends Serializable> implements BaseService<
 
 	@Override
 	public Page<T> findAll(Specification<T> specification, Pageable pageable) {
-		return baseRepository.findAll(specification, pageable);
+		return null;
 	}
 }
